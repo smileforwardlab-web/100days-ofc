@@ -586,6 +586,22 @@ footer a { color: var(--text-dark); text-decoration: none; }
 @media (max-width: 520px) {
   .btn-hero, .btn-cta { padding: 16px 36px; }
 }
+
+/* ===== SCROLL FADE-UP ANIMATION ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up.delay-1 { transition-delay: 0.1s; }
+.fade-up.delay-2 { transition-delay: 0.2s; }
+.fade-up.delay-3 { transition-delay: 0.3s; }
+.fade-up.delay-4 { transition-delay: 0.4s; }
+.fade-up.delay-5 { transition-delay: 0.5s; }
 </style>
 </head>
 <body>
@@ -747,17 +763,17 @@ footer a { color: var(--text-dark); text-decoration: none; }
     <div class="hero-content-inner">
       <span class="hero-event-label">100 DAYS CONSISTENCY EVENT</span>
       <span class="hero-event-sub gold-text">Adult Pink &amp; Glamour</span>
-      <h1 class="gold-text">100日ありがとうオフ会</h1>
-      <p class="hero-tagline">みんなで楽しむ &nbsp;✦&nbsp; AI &nbsp;✦&nbsp; つながり</p>
-      <div class="hero-divider"><div class="hero-divider-diamond"></div></div>
-      <div class="hero-info">
+      <h1 class="gold-text fade-up">100日ありがとうオフ会</h1>
+      <p class="hero-tagline fade-up delay-1">みんなで楽しむ &nbsp;✦&nbsp; AI &nbsp;✦&nbsp; つながり</p>
+      <div class="hero-divider fade-up delay-2"><div class="hero-divider-diamond"></div></div>
+      <div class="hero-info fade-up delay-3">
         <div class="hero-info-item">2026年7月1日（水）12:00〜14:30</div>
         <div class="hero-info-item">浅草付近</div>
         <div class="hero-info-item">3,300円（お昼ごはん付き）</div>
         <div class="hero-info-item">先着10名さま</div>
       </div>
-      <a href="https://buy.stripe.com/bJeaEXcUFg6sane9hM1ck0e" class="btn-hero">参加申し込みはこちら</a>
-      <p class="hero-note">受付 11:45〜 &nbsp;／&nbsp; お申し込み後に会場詳細をご案内します</p>
+      <a href="https://buy.stripe.com/bJeaEXcUFg6sane9hM1ck0e" class="btn-hero fade-up delay-4">参加申し込みはこちら</a>
+      <p class="hero-note fade-up delay-5">受付 11:45〜 &nbsp;／&nbsp; お申し込み後に会場詳細をご案内します</p>
     </div>
   </div>
 </div>
@@ -767,19 +783,19 @@ footer a { color: var(--text-dark); text-decoration: none; }
 <!-- 共感 -->
 <div class="kyokan-bg sec">
   <div class="sec-inner">
-    <div class="sec-head">
+    <div class="sec-head fade-up">
       <span class="sec-en">Voice</span>
       <h2 class="sec-ja gold-text">こんな気持ち、ありませんか？</h2>
       <div class="sec-deco"><div class="sec-deco-dot"></div></div>
     </div>
     <ul class="check-list">
-      <li>AIを始めたけど、一人だと不安で続くか自信がない</li>
-      <li>画面越しの仲間に、一度リアルで会ってみたい</li>
-      <li>「私なんて」と思ってしまうけど、誰かと喜びを分かち合いたい</li>
-      <li>がんばってきた自分を、ちゃんと認めてあげたい</li>
-      <li>AIって正直、難しそうで怖いと思っている</li>
+      <li class="fade-up delay-1">AIを始めたけど、一人だと不安で続くか自信がない</li>
+      <li class="fade-up delay-2">画面越しの仲間に、一度リアルで会ってみたい</li>
+      <li class="fade-up delay-3">「私なんて」と思ってしまうけど、誰かと喜びを分かち合いたい</li>
+      <li class="fade-up delay-4">がんばってきた自分を、ちゃんと認めてあげたい</li>
+      <li class="fade-up delay-5">AIって正直、難しそうで怖いと思っている</li>
     </ul>
-    <div class="kyokan-close" style="background:linear-gradient(135deg,#b88820 0%,#e0c050 40%,#c8a030 70%,#f0d878 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+    <div class="kyokan-close fade-up" style="background:linear-gradient(135deg,#b88820 0%,#e0c050 40%,#c8a030 70%,#f0d878 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
       そんなあなたのために、<br>
       この場所をつくりました。
     </div>
@@ -811,7 +827,7 @@ footer a { color: var(--text-dark); text-decoration: none; }
       </g>
     </svg>
   </div>
-  <div class="concept-inner">
+  <div class="concept-inner fade-up">
     <span class="sec-en">Concept</span>
     <div class="concept-rule"></div>
     <p class="concept-text">
@@ -831,12 +847,12 @@ footer a { color: var(--text-dark); text-decoration: none; }
 <!-- Before / After -->
 <div class="ba-bg sec">
   <div class="sec-inner">
-    <div class="sec-head">
+    <div class="sec-head fade-up">
       <span class="sec-en">Before / After</span>
       <h2 class="sec-ja gold-text">このオフ会に参加すると</h2>
       <div class="sec-deco"><div class="sec-deco-dot"></div></div>
     </div>
-    <div class="ba-wrap">
+    <div class="ba-wrap fade-up">
       <div class="ba-col ba-before">
         <div class="ba-col-label">Before</div>
         <div class="ba-item">画面の中だけの繋がり</div>
@@ -851,7 +867,7 @@ footer a { color: var(--text-dark); text-decoration: none; }
         <div class="ba-item">自分の歩みを誇れるようになる</div>
       </div>
     </div>
-    <div class="ba-feature">
+    <div class="ba-feature fade-up delay-2">
       <p class="ba-feat-before">「AIってなんか怖い・難しそう…」</p>
       <p class="ba-feat-arrow gold-text">✦ ↓ ✦</p>
       <p class="ba-feat-after gold-text">「AIってなんか面白いかも！」</p>
@@ -865,23 +881,23 @@ footer a { color: var(--text-dark); text-decoration: none; }
 <!-- 3つの体験 -->
 <div class="exp-bg sec">
   <div class="sec-inner">
-    <div class="sec-head">
+    <div class="sec-head fade-up">
       <span class="sec-en">Experience</span>
       <h2 class="sec-ja gold-text">当日の3つの体験</h2>
       <div class="sec-deco"><div class="sec-deco-dot"></div></div>
     </div>
     <div class="exp-grid">
-      <div class="exp-card">
+      <div class="exp-card fade-up delay-1">
         <div class="exp-num gold-text">01</div>
         <div class="exp-title gold-text">讃え合い</div>
         <div class="exp-desc">ミニムービー・一言シェアで「みんな頑張ったね」を伝え合う</div>
       </div>
-      <div class="exp-card">
+      <div class="exp-card fade-up delay-2">
         <div class="exp-num gold-text">02</div>
         <div class="exp-title gold-text">AI体験</div>
         <div class="exp-desc">AIゲームで「あ、こう使うんだ！」を体験する</div>
       </div>
-      <div class="exp-card">
+      <div class="exp-card fade-up delay-3">
         <div class="exp-num gold-text">03</div>
         <div class="exp-title gold-text">新しい出会い</div>
         <div class="exp-desc">リアルで人・世界に出会うきっかけになる時間</div>
@@ -915,20 +931,20 @@ footer a { color: var(--text-dark); text-decoration: none; }
     </svg>
   </div>
   <div class="target-inner">
-    <div class="sec-head">
+    <div class="sec-head fade-up">
       <span class="sec-en">For You</span>
       <h2 class="sec-ja gold-text">こんな方に来てほしい</h2>
       <div class="sec-deco"><div class="sec-deco-dot"></div></div>
     </div>
     <ul class="target-list">
-      <li>朝活やAIを、ゆるくでも続けてきた人</li>
-      <li>オンラインで繋がった仲間とリアルで会ってみたい人</li>
-      <li>完璧じゃなくていい、まず楽しみたい人</li>
-      <li>AIはこれからだけど、雰囲気が気になる人</li>
-      <li>「頑張ってきた美春に会ってみたい」と思ってくれる人</li>
-      <li>特別なことはしてないけど、毎日を頑張っている人</li>
+      <li class="fade-up delay-1">朝活やAIを、ゆるくでも続けてきた人</li>
+      <li class="fade-up delay-2">オンラインで繋がった仲間とリアルで会ってみたい人</li>
+      <li class="fade-up delay-3">完璧じゃなくていい、まず楽しみたい人</li>
+      <li class="fade-up delay-4">AIはこれからだけど、雰囲気が気になる人</li>
+      <li class="fade-up delay-5">「頑張ってきた美春に会ってみたい」と思ってくれる人</li>
+      <li class="fade-up delay-5">特別なことはしてないけど、毎日を頑張っている人</li>
     </ul>
-    <div class="target-close">
+    <div class="target-close fade-up">
       朝活AIはもちろん、いつもの毎日を<br>少しでも頑張っているあなたが、この会の主役です🌸
     </div>
   </div>
@@ -940,28 +956,28 @@ footer a { color: var(--text-dark); text-decoration: none; }
 <div class="flow-bg sec">
   <div class="sec-inner">
     <div class="sec-head">
-      <span class="sec-en">Timetable</span>
-      <h2 class="sec-ja gold-text">当日のながれ</h2>
+      <span class="sec-en fade-up">Timetable</span>
+      <h2 class="sec-ja gold-text fade-up delay-1">当日のながれ</h2>
       <div class="sec-deco"><div class="sec-deco-dot"></div></div>
     </div>
     <ul class="flow-list">
-      <li class="flow-item">
+      <li class="flow-item fade-up delay-1">
         <div class="flow-num gold-text">01</div>
         <div><div class="flow-title">オープニング・開会</div><div class="flow-desc">みはるのスピーチと感謝のエール。「AIに出会って変わったこと」みんなで一言シェア</div></div>
       </li>
-      <li class="flow-item">
+      <li class="flow-item fade-up delay-2">
         <div class="flow-num gold-text">02</div>
         <div><div class="flow-title">お昼ごはん</div><div class="flow-desc">軽食をご用意しています。おしゃべりしながらゆっくりどうぞ（参加費込み）</div></div>
       </li>
-      <li class="flow-item">
+      <li class="flow-item fade-up delay-3">
         <div class="flow-num gold-text">03</div>
         <div><div class="flow-title">AIゲームでわいわい交流</div><div class="flow-desc">みんなでAIを使ったゲームを楽しみます。詳細は当日のお楽しみ</div></div>
       </li>
-      <li class="flow-item">
+      <li class="flow-item fade-up delay-4">
         <div class="flow-num gold-text">04</div>
         <div><div class="flow-title">みはるのお話</div><div class="flow-desc">こちらは当日のお楽しみに✨</div></div>
       </li>
-      <li class="flow-item">
+      <li class="flow-item fade-up delay-5">
         <div class="flow-num gold-text">05</div>
         <div><div class="flow-title">エンドロール ＆ 集合写真</div><div class="flow-desc">みんなのメッセージムービーを一緒に見て、最後は集合写真</div></div>
       </li>
@@ -982,27 +998,27 @@ footer a { color: var(--text-dark); text-decoration: none; }
 <div class="qa-bg sec">
   <div class="sec-inner">
     <div class="sec-head">
-      <span class="sec-en">Q &amp; A</span>
-      <h2 class="sec-ja gold-text">よくある質問</h2>
+      <span class="sec-en fade-up">Q &amp; A</span>
+      <h2 class="sec-ja gold-text fade-up delay-1">よくある質問</h2>
       <div class="sec-deco"><div class="sec-deco-dot"></div></div>
     </div>
-    <div class="qa-item">
+    <div class="qa-item fade-up delay-1">
       <div class="qa-q"><span class="qa-q-mark gold-text">Q</span>AIが全然わからなくても参加できますか？</div>
       <div class="qa-a"><span class="qa-a-mark gold-text">A</span>大丈夫！スマホがあればその場で一緒にできる内容です🌸</div>
     </div>
-    <div class="qa-item">
+    <div class="qa-item fade-up delay-2">
       <div class="qa-q"><span class="qa-q-mark gold-text">Q</span>一人での参加でも浮きませんか？</div>
       <div class="qa-a"><span class="qa-a-mark gold-text">A</span>ほとんどの方が一人参加。AIゲームで自然と打ち解けられます💕</div>
     </div>
-    <div class="qa-item">
+    <div class="qa-item fade-up delay-3">
       <div class="qa-q"><span class="qa-q-mark gold-text">Q</span>100日チャレンジをやっていないけど参加していい？</div>
       <div class="qa-a"><span class="qa-a-mark gold-text">A</span>もちろん！AIや朝活はもちろん、人生においてみんな何かしら頑張っています。少しでも頑張った人みんなが主役です🌷</div>
     </div>
-    <div class="qa-item">
+    <div class="qa-item fade-up delay-4">
       <div class="qa-q"><span class="qa-q-mark gold-text">Q</span>パソコンは必要ですか？</div>
       <div class="qa-a"><span class="qa-a-mark gold-text">A</span>スマホだけでOKです📱</div>
     </div>
-    <div class="qa-item">
+    <div class="qa-item fade-up delay-5">
       <div class="qa-q"><span class="qa-q-mark gold-text">Q</span>お昼ごはんは出ますか？</div>
       <div class="qa-a"><span class="qa-a-mark gold-text">A</span>軽食をご用意しています🍽（参加費に込み）</div>
     </div>
@@ -1037,14 +1053,14 @@ footer a { color: var(--text-dark); text-decoration: none; }
   <div class="shime-inner">
     <span class="shime-en">With Love from Miharu</span>
     <div class="shime-rule"></div>
-    <p class="shime-text">
+    <p class="shime-text fade-up">
       完璧じゃなくていい。<br>
       すごい実績がなくてもいい。<br><br>
       <span class="shime-em gold-text">「会ってみたい」<br>その気持ちだけで十分です。</span><br><br>
       あなたが来てくれることが、<br>
       誰かの「来てよかった」になります。
     </p>
-    <a href="https://buy.stripe.com/bJeaEXcUFg6sane9hM1ck0e" class="btn-hero">参加申し込みはこちら</a>
+    <a href="https://buy.stripe.com/bJeaEXcUFg6sane9hM1ck0e" class="btn-hero fade-up delay-2">参加申し込みはこちら</a>
     <p style="margin-top:16px; font-size:12px; color:var(--text-mid); letter-spacing:0.1em;">先着10名さま &nbsp;✦&nbsp; 3,300円（お昼ごはん付き）</p>
   </div>
 </div>
@@ -1060,7 +1076,7 @@ footer a { color: var(--text-dark); text-decoration: none; }
       浅草付近（お申し込み後に詳細をご案内）<br>
       参加費 <strong>3,300円</strong>（お昼ごはん付き）&nbsp;✦&nbsp;先着 <strong>10名さま</strong>
     </p>
-    <a href="https://buy.stripe.com/bJeaEXcUFg6sane9hM1ck0e" class="btn-cta">参加申し込みはこちら</a>
+    <a href="https://buy.stripe.com/bJeaEXcUFg6sane9hM1ck0e" class="btn-cta fade-up delay-2">参加申し込みはこちら</a>
     <p class="cta-note">Stripe決済ページに移動します</p>
   </div>
 </div>
@@ -1073,5 +1089,17 @@ footer a { color: var(--text-dark); text-decoration: none; }
   <p style="margin-top:16px; font-size:10px; opacity:0.6;">© 2026 Harumony AI朝活道場</p>
 </footer>
 
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>

@@ -9,18 +9,18 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --pink-base:   #f5c5d0;
-  --pink-deep:   #e8909c;
-  --pink-soft:   #fbe8ee;
-  --pink-pale:   #fdf4f7;
-  --gold:        #c8a030;
-  --gold-light:  #e8c870;
-  --gold-pale:   #fdf6e0;
-  --gold-line:   #d4b050;
-  --cream:       #fefaf4;
-  --text-dark:   #5a2a3a;
-  --text-mid:    #8a5060;
-  --text-soft:   #b08090;
+  --pink-base:   #c8a0b0;
+  --pink-deep:   #a87080;
+  --pink-soft:   #ece0e4;
+  --pink-pale:   #f6f0f2;
+  --gold:        #b89028;
+  --gold-light:  #d4b050;
+  --gold-pale:   #faf4e0;
+  --gold-line:   #c8a030;
+  --cream:       #fdf8f4;
+  --text-dark:   #3c1e2c;
+  --text-mid:    #7a4858;
+  --text-soft:   #a07888;
 }
 
 body {
@@ -118,37 +118,42 @@ body {
 
 .hero-event-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
-  letter-spacing: 0.35em;
+  font-size: 9px;
+  letter-spacing: 0.65em;
   text-transform: uppercase;
-  color: var(--text-dark);
+  color: var(--text-mid);
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
+  opacity: 0.85;
 }
 .hero-event-sub {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 16px;
-  letter-spacing: 0.25em;
+  font-size: 10px;
+  letter-spacing: 0.55em;
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  opacity: 0.75;
 }
 
 .hero h1 {
   font-family: 'Noto Serif JP', serif;
-  font-size: clamp(28px, 6.5vw, 54px);
+  font-size: clamp(48px, 12vw, 96px);
   font-weight: 500;
-  line-height: 1.4;
-  margin-bottom: 8px;
-  letter-spacing: 0.08em;
-  text-shadow: 0 2px 16px rgba(255,240,200,0.6);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: 0.06em;
+  text-shadow: 0 4px 32px rgba(200,160,80,0.3);
 }
 
 .hero-tagline {
-  font-size: 15px;
-  letter-spacing: 0.28em;
-  color: var(--text-mid);
-  margin-bottom: 28px;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  color: var(--text-dark);
+  margin-bottom: 32px;
+  background: linear-gradient(transparent 55%, rgba(200,140,160,0.28) 55%);
+  padding: 0 8px;
 }
 
 /* ゴールド区切り線 */
@@ -487,26 +492,51 @@ body {
 }
 
 /* ===== タイムテーブル ===== */
-.flow-bg { background: linear-gradient(170deg, #fef8f4 0%, #fdf4f8 100%); }
-.flow-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-.flow-item {
-  display: grid; grid-template-columns: 64px 1fr;
-  gap: 20px; padding: 28px 24px;
-  align-items: start;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(90,42,58,0.08);
-  border-left: 4px solid var(--pink-base);
+.flow-bg { background: linear-gradient(170deg, #fef8f4 0%, #f8f0f4 100%); }
+.flow-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 0;
+  position: relative;
+  padding-left: 56px;
 }
+/* 縦ライン */
+.flow-list::before {
+  content: "";
+  position: absolute;
+  left: 20px; top: 22px; bottom: 22px;
+  width: 2px;
+  background: linear-gradient(to bottom,
+    var(--gold-light) 0%,
+    var(--pink-base) 50%,
+    var(--gold-light) 100%);
+}
+.flow-item {
+  position: relative;
+  display: block;
+  padding: 0 0 28px 28px;
+  align-items: start;
+}
+.flow-item:last-child { padding-bottom: 0; }
 .flow-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 13px; font-weight: 500; letter-spacing: 0.25em;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.2em;
   color: #fff;
-  background: linear-gradient(135deg, #c89030, #e0b848);
-  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #b89028, #d4a840);
+  width: 42px; height: 42px;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
+  position: absolute;
+  left: -56px; top: 0;
+  box-shadow: 0 0 0 4px #fff, 0 0 0 6px rgba(184,144,40,0.25);
+  z-index: 1;
+}
+/* カード部分 */
+.flow-item > div:last-child {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 20px rgba(60,30,44,0.08);
+  border-left: 3px solid rgba(200,160,48,0.3);
 }
 .flow-title { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 500; color: var(--text-dark); margin-bottom: 6px; letter-spacing: 0.04em; }
 .flow-desc { font-size: 15px; color: var(--text-soft); line-height: 1.8; font-family: 'Noto Sans JP', sans-serif; font-weight: 300; }
@@ -628,6 +658,37 @@ footer a { color: var(--text-dark); text-decoration: none; }
 
 @media (max-width: 520px) {
   .btn-hero, .btn-cta { padding: 16px 36px; }
+}
+
+/* ===== POLAROID ===== */
+.polaroid-wrap {
+  margin-top: 52px;
+  display: flex;
+  justify-content: center;
+}
+.polaroid {
+  background: #fff;
+  padding: 14px 14px 52px 14px;
+  box-shadow: 0 12px 40px rgba(60,30,44,0.18), 0 2px 8px rgba(0,0,0,0.08);
+  transform: rotate(-2deg);
+  max-width: 520px;
+  width: 100%;
+}
+.polaroid img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 240px;
+}
+.polaroid-caption {
+  text-align: center;
+  margin-top: 0;
+  padding-top: 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  color: var(--text-soft);
 }
 
 /* ===== SCROLL FADE-UP ANIMATION ===== */
@@ -1027,26 +1088,12 @@ footer a { color: var(--text-dark); text-decoration: none; }
     </ul>
     <p style="margin-top:20px; font-size:12px; color:var(--text-soft); letter-spacing:0.07em;">2026年7月1日（水）12:00〜14:30（受付 11:45〜）／浅草付近</p>
 
-    <!-- 会場写真 -->
-    <div class="fade-up" style="margin-top:52px; position:relative;">
-      <div style="position:relative; overflow:hidden;">
-        <!-- ゴールド枠 -->
-        <div style="position:absolute; inset:10px; border:1px solid rgba(200,160,48,0.5); z-index:2; pointer-events:none;"></div>
-        <!-- 写真 -->
-        <img src="リノスぺ浅草.webp" alt="会場の雰囲気" style="width:100%; display:block; object-fit:cover; height:260px;">
-        <!-- グラデーションオーバーレイ -->
-        <div style="position:absolute; inset:0; background:linear-gradient(to bottom, transparent 50%, rgba(90,42,58,0.45) 100%); z-index:1;"></div>
-        <!-- 写真内テキスト -->
-        <div style="position:absolute; bottom:24px; left:0; right:0; text-align:center; z-index:3;">
-          <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:13px; letter-spacing:0.3em; color:rgba(255,240,220,0.9); display:block; margin-bottom:5px;">Venue</span>
-          <span style="font-family:'Noto Serif JP',serif; font-size:15px; font-weight:500; color:#fff; letter-spacing:0.1em;">こんな空間でお待ちしています</span>
-        </div>
+    <!-- 会場写真（ポラロイド） -->
+    <div class="polaroid-wrap fade-up">
+      <div class="polaroid">
+        <img src="リノスぺ浅草.webp" alt="会場の雰囲気">
+        <p class="polaroid-caption">こんな空間でお待ちしています 🌿</p>
       </div>
-      <!-- 角のゴールド装飾 -->
-      <div style="position:absolute; top:4px; left:4px; width:18px; height:18px; border-top:2px solid var(--gold); border-left:2px solid var(--gold); z-index:3;"></div>
-      <div style="position:absolute; top:4px; right:4px; width:18px; height:18px; border-top:2px solid var(--gold); border-right:2px solid var(--gold); z-index:3;"></div>
-      <div style="position:absolute; bottom:4px; left:4px; width:18px; height:18px; border-bottom:2px solid var(--gold); border-left:2px solid var(--gold); z-index:3;"></div>
-      <div style="position:absolute; bottom:4px; right:4px; width:18px; height:18px; border-bottom:2px solid var(--gold); border-right:2px solid var(--gold); z-index:3;"></div>
     </div>
   </div>
 </div>

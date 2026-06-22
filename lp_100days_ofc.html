@@ -4,510 +4,1067 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>100日ありがとうオフ会 ～みんなで楽しむ × AI × つながり～</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background: #fffaf7;
-    color: #3d2c1e;
-    line-height: 1.8;
-  }
+:root {
+  --pink-base:   #f5c5d0;
+  --pink-deep:   #e8909c;
+  --pink-soft:   #fbe8ee;
+  --pink-pale:   #fdf4f7;
+  --gold:        #c8a030;
+  --gold-light:  #e8c870;
+  --gold-pale:   #fdf6e0;
+  --gold-line:   #d4b050;
+  --cream:       #fefaf4;
+  --text-dark:   #5a2a3a;
+  --text-mid:    #8a5060;
+  --text-soft:   #b08090;
+}
 
-  /* ===== HERO ===== */
-  .hero {
-    background: linear-gradient(160deg, #fff0f5 0%, #fff8ee 50%, #f0f8ff 100%);
-    padding: 60px 20px 50px;
-    text-align: center;
-    border-bottom: 2px dashed #f5c6d0;
-  }
-  .hero-emoji {
-    font-size: 56px;
-    display: block;
-    margin-bottom: 16px;
-    animation: float 3s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-  .hero h1 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(26px, 5vw, 42px);
-    font-weight: 600;
-    color: #c0406a;
-    line-height: 1.4;
-    margin-bottom: 12px;
-  }
-  .hero-sub {
-    font-size: clamp(14px, 3vw, 18px);
-    color: #7a5060;
-    margin-bottom: 28px;
-  }
-  .date-badge {
-    display: inline-block;
-    background: #fff;
-    border: 2px solid #f5c6d0;
-    border-radius: 50px;
-    padding: 10px 32px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #c0406a;
-    margin-bottom: 30px;
-    letter-spacing: 0.05em;
-  }
-  .cta-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #e05080, #f0885a);
-    color: #fff;
-    font-size: 18px;
-    font-weight: 700;
-    padding: 16px 48px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(200, 60, 100, 0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
-    letter-spacing: 0.05em;
-  }
-  .cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 28px rgba(200, 60, 100, 0.4);
-  }
-  .hero-note {
-    margin-top: 14px;
-    font-size: 13px;
-    color: #a07880;
-  }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.9;
+  font-weight: 300;
+  font-size: 16px;
+  overflow-x: hidden;
+}
 
-  /* ===== SECTIONS ===== */
-  section {
-    padding: 56px 20px;
-    max-width: 760px;
-    margin: 0 auto;
-  }
+/* ===== GOLD TEXT GRADIENT ===== */
+.gold-text {
+  background: linear-gradient(135deg, #b88820 0%, #e0c050 40%, #c8a030 70%, #f0d878 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-  .section-tag {
-    display: inline-block;
-    background: #fde8f0;
-    color: #c0406a;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 4px 14px;
-    border-radius: 50px;
-    margin-bottom: 10px;
-    letter-spacing: 0.1em;
-  }
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  background: linear-gradient(160deg, #f8d0dc 0%, #f4c0cc 25%, #fad8d0 50%, #f8e0cc 75%, #faecd8 100%);
+  overflow: hidden;
+}
 
-  h2 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(22px, 4vw, 30px);
-    font-weight: 600;
-    color: #3d2c1e;
-    margin-bottom: 24px;
-    line-height: 1.4;
-  }
+/* ---- 写真エリア（上部） ---- */
+.hero-photo-area {
+  position: relative;
+  width: 100%;
+  height: 62svh;
+  min-height: 400px;
+  max-height: 680px;
+  overflow: hidden;
+}
 
-  /* ===== CONCEPT ===== */
-  .concept-section {
-    background: linear-gradient(135deg, #fff0f5, #fff8ee);
-    padding: 56px 20px;
-  }
-  .concept-inner {
-    max-width: 760px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .concept-text {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(16px, 3vw, 20px);
-    line-height: 2.2;
-    color: #5a3a48;
-  }
-  .concept-text .highlight {
-    background: linear-gradient(transparent 60%, #ffd6e7 60%);
-    font-weight: 600;
-  }
-  .concept-big {
-    font-size: clamp(18px, 4vw, 26px);
-    font-weight: 700;
-    color: #c0406a;
-    margin: 24px 0 8px;
-  }
+/* Bokeh circles（写真エリア） */
+.hero-photo-area::before {
+  content: "";
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    radial-gradient(circle at 18% 25%, rgba(255,255,255,0.52) 0%, transparent 8%),
+    radial-gradient(circle at 78% 15%, rgba(255,255,255,0.42) 0%, transparent 6%),
+    radial-gradient(circle at 8%  68%, rgba(255,255,255,0.38) 0%, transparent 7%),
+    radial-gradient(circle at 90% 55%, rgba(255,255,255,0.45) 0%, transparent 8%),
+    radial-gradient(circle at 42% 8%,  rgba(255,255,255,0.28) 0%, transparent 4%),
+    radial-gradient(ellipse at 50% 0%, rgba(232,200,112,0.16) 0%, transparent 50%);
+  pointer-events: none;
+}
 
-  /* ===== 3つの体験 ===== */
-  .experience-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 28px;
-  }
-  .exp-card {
-    background: #fff;
-    border: 1.5px solid #f5c6d0;
-    border-radius: 20px;
-    padding: 28px 20px;
-    text-align: center;
-  }
-  .exp-icon {
-    font-size: 40px;
-    margin-bottom: 12px;
-  }
-  .exp-title {
-    font-size: 16px;
-    font-weight: 700;
-    color: #c0406a;
-    margin-bottom: 8px;
-  }
-  .exp-desc {
-    font-size: 14px;
-    color: #7a5060;
-    line-height: 1.7;
-  }
+/* 写真下端をピンクへフェード */
+.hero-photo-area::after {
+  content: "";
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+  height: 140px;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(248,208,224,0.65) 55%,
+    rgba(246,200,220,1) 100%
+  );
+  pointer-events: none;
+}
 
-  /* ===== TIMETABLE ===== */
-  .timetable-section {
-    background: #fff;
-  }
-  .timetable {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin-top: 24px;
-  }
-  .timetable th {
-    background: #f5e6ea;
-    color: #9a3355;
-    font-size: 14px;
-    padding: 10px 16px;
-    text-align: left;
-  }
-  .timetable th:first-child { border-radius: 12px 0 0 0; }
-  .timetable th:last-child { border-radius: 0 12px 0 0; }
-  .timetable td {
-    padding: 12px 16px;
-    border-bottom: 1px solid #fde8f0;
-    font-size: 14px;
-    vertical-align: top;
-  }
-  .timetable tr:last-child td { border-bottom: none; }
-  .timetable tr:nth-child(even) td { background: #fffaf7; }
-  .time-cell {
-    font-weight: 700;
-    color: #c0406a;
-    white-space: nowrap;
-    width: 70px;
-  }
+/* みはる写真 */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+  display: block;
+}
 
-  /* ===== GAMES ===== */
-  .games-section {
-    background: linear-gradient(160deg, #f8f0ff, #fff0f5);
-    padding: 56px 20px;
-  }
-  .games-inner { max-width: 760px; margin: 0 auto; }
-  .game-card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 32px 28px;
-    margin-bottom: 24px;
-    border: 1.5px solid #e8d0f0;
-  }
-  .game-number {
-    display: inline-block;
-    background: linear-gradient(135deg, #c060e0, #e05080);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 4px 14px;
-    border-radius: 50px;
-    margin-bottom: 12px;
-    letter-spacing: 0.1em;
-  }
-  .game-title {
-    font-size: clamp(18px, 3vw, 22px);
-    font-weight: 700;
-    color: #7030b0;
-    margin-bottom: 10px;
-  }
-  .game-lead {
-    font-size: 14px;
-    color: #8a6090;
-    margin-bottom: 16px;
-  }
-  .game-list {
-    list-style: none;
-    padding: 0;
-  }
-  .game-list li {
-    font-size: 14px;
-    color: #5a3a70;
-    padding: 5px 0 5px 22px;
-    position: relative;
-    border-bottom: 1px dashed #eedbf8;
-  }
-  .game-list li:last-child { border-bottom: none; }
-  .game-list li::before {
-    content: "✦";
-    position: absolute;
-    left: 0;
-    color: #c060e0;
-    font-size: 11px;
-    top: 7px;
-  }
+/* SVG 花装飾（写真エリア上） */
+.hero-flowers {
+  position: absolute;
+  inset: 0; z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
 
-  /* ===== 未来宣言 ===== */
-  .mirai-box {
-    background: linear-gradient(135deg, #fff8d6, #fff0e8);
-    border: 2px solid #f5d060;
-    border-radius: 20px;
-    padding: 32px 28px;
-    margin-top: 24px;
-  }
-  .mirai-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #c07010;
-    margin-bottom: 12px;
-  }
-  .mirai-list {
-    list-style: none;
-    padding: 0;
-  }
-  .mirai-list li {
-    font-size: 14px;
-    color: #7a5020;
-    padding: 6px 0 6px 24px;
-    position: relative;
-  }
-  .mirai-list li::before {
-    content: "🌟";
-    position: absolute;
-    left: 0;
-    font-size: 13px;
-  }
+/* ---- テキストエリア（下部） ---- */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 36px 28px 56px;
+  background: linear-gradient(160deg, #f6c8d8 0%, #fad8cc 50%, #f8e8c8 100%);
+}
+.hero-content-inner { max-width: 680px; margin: 0 auto; }
 
-  /* ===== CTA BOTTOM ===== */
-  .cta-section {
-    background: linear-gradient(160deg, #fff0f5 0%, #fff8ee 100%);
-    text-align: center;
-    padding: 60px 20px;
-    border-top: 2px dashed #f5c6d0;
-  }
-  .cta-section h2 {
-    color: #c0406a;
-    margin-bottom: 10px;
-  }
-  .cta-section p {
-    color: #7a5060;
-    margin-bottom: 30px;
-    font-size: 15px;
-  }
+/* 不要要素（非表示） */
+.hero-overlay { display: none; }
+.hero::before, .hero::after { display: none; }
 
-  /* ===== DIVIDER ===== */
-  .section-divider {
-    text-align: center;
-    font-size: 22px;
-    padding: 10px 0;
-    letter-spacing: 8px;
-    color: #f5c6d0;
-  }
+.hero-event-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  display: block;
+  margin-bottom: 6px;
+}
+.hero-event-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  display: block;
+  margin-bottom: 18px;
+}
 
-  /* ===== FOOTER ===== */
-  footer {
-    background: #3d2c1e;
-    color: #c8a8a0;
-    text-align: center;
-    padding: 28px 20px;
-    font-size: 13px;
-  }
-  footer a { color: #f5c6d0; text-decoration: none; }
+.hero h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(28px, 6.5vw, 54px);
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 16px rgba(255,240,200,0.6);
+}
 
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 520px) {
-    .cta-btn { font-size: 16px; padding: 14px 32px; }
-    .timetable td, .timetable th { padding: 8px 10px; }
-  }
+.hero-tagline {
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  color: var(--text-mid);
+  margin-bottom: 28px;
+}
+
+/* ゴールド区切り線 */
+.hero-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto 28px;
+  max-width: 280px;
+}
+.hero-divider::before,
+.hero-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c8a030, transparent);
+}
+.hero-divider-diamond {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* イベント情報バッジ */
+.hero-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 16px;
+  margin-bottom: 32px;
+}
+.hero-info-item {
+  font-size: 13px;
+  color: var(--text-dark);
+  letter-spacing: 0.05em;
+  background: rgba(255,255,255,0.62);
+  border: 1px solid rgba(200,160,48,0.35);
+  padding: 5px 16px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.hero-info-item::before {
+  content: "✦";
+  color: var(--gold);
+  font-size: 9px;
+}
+
+/* 申し込みボタン */
+.btn-hero {
+  display: inline-block;
+  background: linear-gradient(135deg, #c89030 0%, #e0b848 35%, #c88828 65%, #d4a038 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 17px 56px;
+  text-decoration: none;
+  letter-spacing: 0.25em;
+  box-shadow: 0 4px 24px rgba(180,130,20,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transition: left 0.5s;
+}
+.btn-hero:hover::before { left: 100%; }
+.btn-hero:hover { transform: translateY(-2px); box-shadow: 0 6px 32px rgba(180,130,20,0.42); }
+
+.hero-note {
+  margin-top: 14px;
+  font-size: 11px;
+  color: var(--text-soft);
+  letter-spacing: 0.1em;
+}
+
+/* ===== SECTION COMMON ===== */
+.sec { padding: 80px 28px; }
+.sec-inner { max-width: 680px; margin: 0 auto; }
+.sec-head { margin-bottom: 48px; text-align: center; }
+
+.sec-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: 0.38em;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+.sec-ja {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: 0.06em;
+}
+
+/* ゴールド飾り線 */
+.sec-deco {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px auto 0;
+  max-width: 200px;
+}
+.sec-deco::before, .sec-deco::after {
+  content: ""; flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-line), transparent);
+}
+.sec-deco-dot {
+  width: 5px; height: 5px;
+  background: var(--gold-line);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.sec-rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(200,160,48,0.3), transparent);
+  margin: 0 28px;
+}
+
+/* ===== 共感 ===== */
+.kyokan-bg {
+  background: linear-gradient(170deg, #fdf4f8 0%, #fef8f2 100%);
+}
+.check-list { list-style: none; }
+.check-list li {
+  padding: 18px 0 18px 36px;
+  border-bottom: 1px solid rgba(200,160,48,0.18);
+  font-size: 15px;
+  color: var(--text-mid);
+  position: relative;
+  line-height: 1.85;
+}
+.check-list li:last-child { border-bottom: none; }
+.check-list li::before {
+  content: "✦";
+  position: absolute; left: 0; top: 20px;
+  color: var(--gold-light);
+  font-size: 14px;
+}
+.kyokan-close {
+  margin-top: 44px;
+  text-align: center;
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(17px, 3vw, 21px);
+  font-weight: 500;
+  line-height: 2.4;
+  padding: 36px 28px;
+  border: 1px solid rgba(200,160,48,0.4);
+  border-top: 2px solid var(--gold-line);
+  background: linear-gradient(to bottom, rgba(255,250,240,0.8), rgba(255,244,248,0.8));
+  letter-spacing: 0.06em;
+  position: relative;
+}
+.kyokan-close::before,
+.kyokan-close::after {
+  content: "✦";
+  position: absolute;
+  color: var(--gold-light);
+  font-size: 10px;
+}
+.kyokan-close::before { top: 14px; left: 50%; transform: translateX(-50%); }
+.kyokan-close::after  { bottom: 14px; left: 50%; transform: translateX(-50%); }
+
+/* ===== CONCEPT ===== */
+.concept-bg {
+  background: linear-gradient(145deg, #f0c0d0 0%, #f8d8e0 35%, #fce8d8 65%, #fdf4e4 100%);
+  padding: 88px 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.concept-flowers {
+  position: absolute; inset: 0;
+  pointer-events: none; overflow: hidden;
+}
+.concept-inner { max-width: 600px; margin: 0 auto; position: relative; z-index: 1; }
+.concept-rule {
+  width: 52px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-line), transparent);
+  margin: 0 auto 44px;
+}
+.concept-text {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(15px, 2.8vw, 19px);
+  line-height: 3;
+  color: var(--text-dark);
+  letter-spacing: 0.06em;
+}
+.concept-em {
+  font-size: clamp(19px, 4vw, 26px);
+  font-weight: 500;
+  display: block;
+  margin: 20px 0;
+  letter-spacing: 0.06em;
+}
+.concept-accent {
+  border-bottom: 1px solid rgba(200,160,48,0.5);
+  padding-bottom: 2px;
+}
+
+/* ===== BEFORE / AFTER ===== */
+.ba-bg {
+  background: linear-gradient(170deg, #fef8f4 0%, #fdf4f8 100%);
+}
+.ba-wrap {
+  display: flex; align-items: stretch;
+  border: 1px solid rgba(200,160,48,0.35);
+  margin-bottom: 24px;
+  background: rgba(255,255,255,0.6);
+}
+.ba-col { flex: 1; padding: 30px 24px; }
+.ba-before { background: rgba(248,240,244,0.8); }
+.ba-after  { background: rgba(255,248,240,0.8); }
+.ba-arrow-col {
+  width: 48px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(to bottom, rgba(248,240,244,0.8), rgba(255,248,240,0.8));
+  border-left: 1px solid rgba(200,160,48,0.2);
+  border-right: 1px solid rgba(200,160,48,0.2);
+}
+.ba-arrow-inner { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; }
+@media (max-width: 480px) {
+  .ba-wrap { flex-direction: column; }
+  .ba-arrow-col { width: 100%; height: 40px; border: none; border-top: 1px solid rgba(200,160,48,0.2); border-bottom: 1px solid rgba(200,160,48,0.2); background: linear-gradient(to right, rgba(248,240,244,0.8), rgba(255,248,240,0.8)); }
+}
+.ba-col-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; letter-spacing: 0.25em; font-weight: 500;
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.ba-col-label::after { content: ""; flex: 1; height: 1px; }
+.ba-before .ba-col-label { color: #a090a0; }
+.ba-before .ba-col-label::after { background: rgba(160,140,160,0.3); }
+.ba-after  .ba-col-label { color: var(--gold); }
+.ba-after  .ba-col-label::after { background: rgba(200,160,48,0.3); }
+.ba-item {
+  font-size: 14px; color: var(--text-mid);
+  padding: 10px 0; border-bottom: 1px solid rgba(200,160,48,0.1); line-height: 1.7;
+}
+.ba-after .ba-item { color: var(--text-dark); }
+.ba-item:last-child { border-bottom: none; }
+.ba-feature {
+  border: 1px solid rgba(200,160,48,0.45);
+  border-top: 2px solid var(--gold);
+  padding: 36px 28px; text-align: center;
+  background: linear-gradient(to bottom, var(--gold-pale), var(--pink-pale));
+  position: relative;
+}
+.ba-feat-before { font-size: 15px; color: #b0a0a0; letter-spacing: 0.02em; }
+.ba-feat-arrow { font-family: 'Cormorant Garamond', serif; font-size: 28px; margin: 14px 0; letter-spacing: 0.1em; }
+.ba-feat-after { font-family: 'Noto Serif JP', serif; font-size: clamp(18px, 3.5vw, 22px); font-weight: 500; letter-spacing: 0.04em; }
+.ba-feat-note { margin-top: 12px; font-size: 13px; color: var(--text-soft); line-height: 1.85; }
+
+/* ===== 体験 ===== */
+.exp-bg {
+  background: linear-gradient(150deg, #fce0e8 0%, #fdf0e8 100%);
+  position: relative; overflow: hidden;
+}
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1px;
+  background: rgba(200,160,48,0.25);
+  border: 1px solid rgba(200,160,48,0.25);
+}
+.exp-card {
+  background: rgba(255,252,248,0.92);
+  padding: 36px 22px; text-align: center;
+}
+.exp-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px; font-weight: 500;
+  line-height: 1; margin-bottom: 14px;
+}
+.exp-title { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 500; margin-bottom: 10px; letter-spacing: 0.06em; }
+.exp-desc { font-size: 13px; color: var(--text-soft); line-height: 1.85; }
+
+/* ===== こんな方に ===== */
+.target-bg {
+  background: linear-gradient(150deg, #e8a8c0 0%, #f4c8d8 35%, #f8dce0 65%, #fce8d4 100%);
+  padding: 80px 28px;
+  position: relative; overflow: hidden;
+}
+.target-flowers { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.target-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+.target-bg .sec-ja { color: var(--text-dark); }
+.target-list { list-style: none; }
+.target-list li {
+  font-size: 15px; color: var(--text-dark);
+  padding: 14px 0 14px 28px;
+  border-bottom: 1px solid rgba(200,160,48,0.2);
+  position: relative; line-height: 1.8;
+}
+.target-list li:last-child { border-bottom: none; }
+.target-list li::before {
+  content: "✦";
+  position: absolute; left: 0; top: 16px;
+  color: var(--gold-light); font-size: 11px;
+}
+.target-close {
+  margin-top: 36px; padding: 24px 28px;
+  border: 1px solid rgba(200,160,48,0.45);
+  background: rgba(255,255,255,0.55);
+  font-size: 15px; color: var(--text-dark);
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 400; line-height: 2; letter-spacing: 0.04em;
+  text-align: center;
+}
+
+/* ===== タイムテーブル ===== */
+.flow-bg { background: linear-gradient(170deg, #fef8f4 0%, #fdf4f8 100%); }
+.flow-list { list-style: none; }
+.flow-item {
+  display: grid; grid-template-columns: 56px 1fr;
+  gap: 20px; padding: 24px 0;
+  border-bottom: 1px solid rgba(200,160,48,0.2); align-items: start;
+}
+.flow-item:last-child { border-bottom: none; }
+.flow-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 500;
+  line-height: 1; text-align: center; padding-top: 3px;
+}
+.flow-title { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 500; color: var(--text-dark); margin-bottom: 5px; letter-spacing: 0.04em; }
+.flow-desc { font-size: 13px; color: var(--text-soft); line-height: 1.8; }
+
+/* ===== AIゲーム ===== */
+.game-bg { background: linear-gradient(150deg, #fce8d8 0%, #fdf8e8 100%); }
+.game-card {
+  border: 1px solid rgba(200,160,48,0.4);
+  border-top: 2px solid var(--gold);
+  padding: 48px 32px; text-align: center;
+  background: rgba(255,252,244,0.8);
+  position: relative; overflow: hidden;
+}
+.game-card::before {
+  content: "✦";
+  position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+  color: var(--gold-light); font-size: 14px;
+}
+.game-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; letter-spacing: 0.22em; margin-bottom: 16px; }
+.game-title { font-family: 'Noto Serif JP', serif; font-size: clamp(17px, 3vw, 20px); font-weight: 500; color: var(--text-dark); margin-bottom: 20px; letter-spacing: 0.04em; }
+.game-text { font-size: 15px; color: var(--text-mid); line-height: 2.2; }
+.game-badge {
+  display: inline-block; margin-top: 24px; font-size: 12px;
+  border: 1px solid rgba(200,160,48,0.4); padding: 8px 28px;
+  letter-spacing: 0.14em; background: rgba(255,250,235,0.9);
+  color: var(--text-mid);
+}
+
+/* ===== Q&A ===== */
+.qa-bg { background: linear-gradient(170deg, #fdf8f4 0%, #fef4f8 100%); }
+.qa-item { border-bottom: 1px solid rgba(200,160,48,0.2); padding: 28px 0; }
+.qa-item:first-child { border-top: 1px solid rgba(200,160,48,0.2); }
+.qa-q { font-size: 15px; font-weight: 500; color: var(--text-dark); margin-bottom: 12px; display: grid; grid-template-columns: 32px 1fr; gap: 8px; align-items: start; line-height: 1.75; }
+.qa-q-mark { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1.1; }
+.qa-a { font-size: 14px; color: var(--text-mid); display: grid; grid-template-columns: 32px 1fr; gap: 8px; align-items: start; line-height: 1.9; }
+.qa-a-mark { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; line-height: 1.1; }
+
+/* ===== 締め ===== */
+.shime-bg {
+  background: linear-gradient(155deg, #e090b0 0%, #edb0c4 25%, #f4c8d4 50%, #f8dcc8 75%, #fdecd8 100%);
+  padding: 100px 28px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.shime-flowers { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.shime-inner { max-width: 520px; margin: 0 auto; position: relative; z-index: 1; }
+.shime-en { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; letter-spacing: 0.35em; display: block; margin-bottom: 20px; color: var(--text-mid); }
+.shime-rule { width: 48px; height: 1px; background: linear-gradient(to right, transparent, var(--gold-line), transparent); margin: 0 auto 48px; }
+.shime-text { font-family: 'Noto Serif JP', serif; font-size: clamp(17px, 3.5vw, 22px); color: var(--text-dark); line-height: 3; margin-bottom: 52px; letter-spacing: 0.06em; }
+.shime-em { font-weight: 500; display: block; margin: 10px 0; }
+
+/* ===== CTA ===== */
+.cta-sec {
+  background: linear-gradient(160deg, var(--pink-soft) 0%, var(--gold-pale) 100%);
+  padding: 80px 28px; text-align: center;
+}
+.cta-inner { max-width: 520px; margin: 0 auto; }
+.cta-title { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 4vw, 27px); font-weight: 500; margin-bottom: 8px; letter-spacing: 0.06em; }
+.cta-info {
+  font-size: 14px; color: var(--text-mid);
+  line-height: 2.5; margin: 28px 0 40px; letter-spacing: 0.03em;
+}
+.cta-info strong { font-weight: 500; color: var(--text-dark); }
+.btn-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #c89030 0%, #e0b848 35%, #c88828 65%, #d4a038 100%);
+  color: #fff;
+  font-size: 14px; font-weight: 400;
+  padding: 20px 60px;
+  text-decoration: none; letter-spacing: 0.25em;
+  box-shadow: 0 4px 28px rgba(180,130,20,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative; overflow: hidden;
+}
+.btn-cta::before {
+  content: "";
+  position: absolute; top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transition: left 0.5s;
+}
+.btn-cta:hover::before { left: 100%; }
+.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 36px rgba(180,130,20,0.42); }
+.cta-note { margin-top: 16px; font-size: 11px; color: var(--text-soft); letter-spacing: 0.1em; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: linear-gradient(135deg, #e8a8be 0%, #f0bcc8 40%, #ecc0a8 100%);
+  color: var(--text-dark);
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+footer a { color: var(--text-dark); text-decoration: none; }
+.footer-deco {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; color: rgba(200,160,48,0.6);
+  margin-bottom: 14px; letter-spacing: 0.3em;
+}
+
+@media (max-width: 520px) {
+  .btn-hero, .btn-cta { padding: 16px 36px; }
+}
 </style>
 </head>
 <body>
 
 <!-- ===== HERO ===== -->
 <div class="hero">
-  <span class="hero-emoji">🎪</span>
-  <h1>100日ありがとうオフ会<br><span style="font-size:0.75em; color:#e07090;">〜みんなで楽しむ × AI × つながり〜</span></h1>
-  <p class="hero-sub">4月から続けてきたAI100日チャレンジが、ついに100日目を迎えます 🌸</p>
-  <div class="date-badge">📅 2026年7月1日（火）12:00〜14:30</div>
-  <br>
-  <a href="https://www.reservestock.jp/events/1149565" class="cta-btn">✨ 参加申し込みはこちら</a>
-  <p class="hero-note">※ 申し込みページに移動します</p>
+  <!-- 写真エリア（上部） -->
+  <div class="hero-photo-area">
+    <img src="miharu.jpg" alt="みはる（長岡美春）" class="hero-img">
+    <!-- 金の花SVG装飾 -->
+    <div class="hero-flowers">
+    <svg viewBox="0 0 800 700" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;position:absolute;inset:0;" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <style>
+          .pk { fill: none; stroke: rgba(200,160,48,0.60); stroke-width: 1.3; }
+          .pk2{ fill: none; stroke: rgba(200,160,48,0.40); stroke-width: 1.0; }
+          .pk3{ fill: none; stroke: rgba(200,160,48,0.25); stroke-width: 0.8; }
+          .lf { fill: none; stroke: rgba(180,140,40,0.45); stroke-width: 1.0; }
+          .st { fill: rgba(215,172,50,0.55); }
+          .st2{ fill: rgba(215,172,50,0.35); }
+          .sp { fill: rgba(220,180,50,0.55); }
+        </style>
+        <!-- 桜の花びら（ハート型）テンプレ -->
+        <g id="sakura-lg">
+          <ellipse class="pk" cx="0" cy="-30" rx="13" ry="28"/>
+          <ellipse class="pk" cx="0" cy="-30" rx="13" ry="28" transform="rotate(72)"/>
+          <ellipse class="pk" cx="0" cy="-30" rx="13" ry="28" transform="rotate(144)"/>
+          <ellipse class="pk" cx="0" cy="-30" rx="13" ry="28" transform="rotate(216)"/>
+          <ellipse class="pk" cx="0" cy="-30" rx="13" ry="28" transform="rotate(288)"/>
+          <circle class="st" cx="0" cy="0" r="6.5"/>
+          <line stroke="rgba(215,172,50,0.5)" stroke-width="0.8" x1="0" y1="0" x2="0" y2="-18"/>
+          <line stroke="rgba(215,172,50,0.5)" stroke-width="0.8" x1="0" y1="0" x2="0" y2="-18" transform="rotate(72)"/>
+          <line stroke="rgba(215,172,50,0.5)" stroke-width="0.8" x1="0" y1="0" x2="0" y2="-18" transform="rotate(144)"/>
+          <line stroke="rgba(215,172,50,0.5)" stroke-width="0.8" x1="0" y1="0" x2="0" y2="-18" transform="rotate(216)"/>
+          <line stroke="rgba(215,172,50,0.5)" stroke-width="0.8" x1="0" y1="0" x2="0" y2="-18" transform="rotate(288)"/>
+        </g>
+        <g id="sakura-md">
+          <ellipse class="pk" cx="0" cy="-20" rx="9" ry="19"/>
+          <ellipse class="pk" cx="0" cy="-20" rx="9" ry="19" transform="rotate(72)"/>
+          <ellipse class="pk" cx="0" cy="-20" rx="9" ry="19" transform="rotate(144)"/>
+          <ellipse class="pk" cx="0" cy="-20" rx="9" ry="19" transform="rotate(216)"/>
+          <ellipse class="pk" cx="0" cy="-20" rx="9" ry="19" transform="rotate(288)"/>
+          <circle class="st" cx="0" cy="0" r="4.5"/>
+        </g>
+        <g id="sakura-sm">
+          <ellipse class="pk2" cx="0" cy="-14" rx="6" ry="13"/>
+          <ellipse class="pk2" cx="0" cy="-14" rx="6" ry="13" transform="rotate(72)"/>
+          <ellipse class="pk2" cx="0" cy="-14" rx="6" ry="13" transform="rotate(144)"/>
+          <ellipse class="pk2" cx="0" cy="-14" rx="6" ry="13" transform="rotate(216)"/>
+          <ellipse class="pk2" cx="0" cy="-14" rx="6" ry="13" transform="rotate(288)"/>
+          <circle class="st2" cx="0" cy="0" r="3"/>
+        </g>
+        <g id="sakura-xs">
+          <ellipse class="pk3" cx="0" cy="-9" rx="4" ry="8"/>
+          <ellipse class="pk3" cx="0" cy="-9" rx="4" ry="8" transform="rotate(72)"/>
+          <ellipse class="pk3" cx="0" cy="-9" rx="4" ry="8" transform="rotate(144)"/>
+          <ellipse class="pk3" cx="0" cy="-9" rx="4" ry="8" transform="rotate(216)"/>
+          <ellipse class="pk3" cx="0" cy="-9" rx="4" ry="8" transform="rotate(288)"/>
+          <circle class="st2" cx="0" cy="0" r="2"/>
+        </g>
+        <polygon id="spark" points="0,-7 1.2,-1.2 7,0 1.2,1.2 0,7 -1.2,1.2 -7,0 -1.2,-1.2"/>
+      </defs>
+
+      <!-- ===== 左側 ===== -->
+      <!-- 左下 大枝 -->
+      <path class="lf" d="M -10 720 Q 40 600 90 490 Q 130 390 160 270 Q 180 180 170 80"/>
+      <ellipse class="lf" cx="65" cy="590" rx="22" ry="11" transform="rotate(-35,65,590)"/>
+      <ellipse class="lf" cx="110" cy="460" rx="20" ry="10" transform="rotate(20,110,460)"/>
+      <ellipse class="lf" cx="148" cy="330" rx="18" ry="9" transform="rotate(-15,148,330)"/>
+      <ellipse class="lf" cx="162" cy="190" rx="16" ry="8" transform="rotate(25,162,190)"/>
+      <!-- 左下 花群 -->
+      <use href="#sakura-lg" transform="translate(55,640) rotate(-20)"/>
+      <use href="#sakura-md" transform="translate(150,670) rotate(12)"/>
+      <use href="#sakura-sm" transform="translate(215,620) rotate(-5)"/>
+      <use href="#sakura-sm" transform="translate(30,560) rotate(18)"/>
+      <use href="#sakura-xs" transform="translate(100,530) rotate(-10)"/>
+      <!-- 左中 花群 -->
+      <use href="#sakura-md" transform="translate(70,380) rotate(8)"/>
+      <use href="#sakura-sm" transform="translate(30,310) rotate(-22)"/>
+      <use href="#sakura-xs" transform="translate(120,350) rotate(15)"/>
+      <!-- 左上 花 -->
+      <use href="#sakura-md" transform="translate(100,160) rotate(-12)"/>
+      <use href="#sakura-sm" transform="translate(50,100) rotate(20)"/>
+      <use href="#sakura-xs" transform="translate(160,110) rotate(-8)"/>
+
+      <!-- 左 細枝 -->
+      <path class="lf" d="M 30 400 Q 70 350 90 290 Q 110 230 100 160"/>
+      <ellipse class="lf" cx="72" cy="330" rx="14" ry="7" transform="rotate(-25,72,330)"/>
+
+      <!-- ===== 右側 ===== -->
+      <!-- 右上 大枝 -->
+      <path class="lf" d="M 820 -10 Q 770 80 730 170 Q 690 260 670 370 Q 655 450 660 560"/>
+      <ellipse class="lf" cx="758" cy="115" rx="22" ry="11" transform="rotate(28,758,115)"/>
+      <ellipse class="lf" cx="704" cy="240" rx="20" ry="10" transform="rotate(-18,704,240)"/>
+      <ellipse class="lf" cx="672" cy="370" rx="18" ry="9" transform="rotate(12,672,370)"/>
+      <ellipse class="lf" cx="660" cy="500" rx="16" ry="8" transform="rotate(-22,660,500)"/>
+      <!-- 右上 花群 -->
+      <use href="#sakura-lg" transform="translate(700,55) rotate(22)"/>
+      <use href="#sakura-md" transform="translate(760,150) rotate(-14)"/>
+      <use href="#sakura-sm" transform="translate(720,230) rotate(8)"/>
+      <use href="#sakura-xs" transform="translate(800,110) rotate(-20)"/>
+      <use href="#sakura-xs" transform="translate(640,80) rotate(15)"/>
+      <!-- 右中 花群 -->
+      <use href="#sakura-md" transform="translate(730,330) rotate(-10)"/>
+      <use href="#sakura-sm" transform="translate(780,400) rotate(18)"/>
+      <use href="#sakura-xs" transform="translate(660,440) rotate(-6)"/>
+      <!-- 右下 花群 -->
+      <use href="#sakura-md" transform="translate(700,560) rotate(15)"/>
+      <use href="#sakura-sm" transform="translate(760,600) rotate(-8)"/>
+      <use href="#sakura-xs" transform="translate(640,610) rotate(20)"/>
+
+      <!-- 右 細枝 -->
+      <path class="lf" d="M 820 300 Q 760 340 730 400 Q 710 450 720 520"/>
+      <ellipse class="lf" cx="748" cy="365" rx="14" ry="7" transform="rotate(22,748,365)"/>
+
+      <!-- ===== 散り花びら（中央・全体） ===== -->
+      <use href="#sakura-xs" transform="translate(260,140) rotate(30)"/>
+      <use href="#sakura-xs" transform="translate(380,200) rotate(-15)"/>
+      <use href="#sakura-xs" transform="translate(480,160) rotate(42)"/>
+      <use href="#sakura-xs" transform="translate(330,300) rotate(-28)"/>
+      <use href="#sakura-xs" transform="translate(540,280) rotate(18)"/>
+      <use href="#sakura-xs" transform="translate(220,420) rotate(-10)"/>
+      <use href="#sakura-xs" transform="translate(580,450) rotate(35)"/>
+      <use href="#sakura-xs" transform="translate(440,520) rotate(-22)"/>
+      <use href="#sakura-xs" transform="translate(310,600) rotate(12)"/>
+      <use href="#sakura-xs" transform="translate(490,640) rotate(-38)"/>
+      <!-- 単花びら（さらに散らす） -->
+      <ellipse class="pk3" cx="350" cy="80"  rx="4" ry="9" transform="rotate(20,350,80)"/>
+      <ellipse class="pk3" cx="420" cy="120" rx="3" ry="7" transform="rotate(-30,420,120)"/>
+      <ellipse class="pk3" cx="280" cy="240" rx="4" ry="8" transform="rotate(45,280,240)"/>
+      <ellipse class="pk3" cx="560" cy="380" rx="3" ry="7" transform="rotate(-12,560,380)"/>
+      <ellipse class="pk3" cx="190" cy="500" rx="4" ry="8" transform="rotate(25,190,500)"/>
+      <ellipse class="pk3" cx="600" cy="560" rx="3" ry="6" transform="rotate(-40,600,560)"/>
+      <ellipse class="pk3" cx="350" cy="620" rx="4" ry="8" transform="rotate(18,350,620)"/>
+      <ellipse class="pk3" cx="450" cy="680" rx="3" ry="7" transform="rotate(-25,450,680)"/>
+
+      <!-- ===== パール ===== -->
+      <circle cx="715" cy="610" r="5.5" fill="rgba(245,228,210,0.75)" stroke="rgba(200,160,48,0.45)" stroke-width="1"/>
+      <circle cx="738" cy="638" r="3.8" fill="rgba(245,228,210,0.65)" stroke="rgba(200,160,48,0.38)" stroke-width="0.9"/>
+      <circle cx="693" cy="642" r="4.5" fill="rgba(245,228,210,0.70)" stroke="rgba(200,160,48,0.42)" stroke-width="1"/>
+      <circle cx="60"  cy="660" r="4"   fill="rgba(245,228,210,0.65)" stroke="rgba(200,160,48,0.38)" stroke-width="0.9"/>
+      <circle cx="82"  cy="680" r="3"   fill="rgba(245,228,210,0.60)" stroke="rgba(200,160,48,0.35)" stroke-width="0.8"/>
+
+      <!-- ===== スパークル ===== -->
+      <use href="#spark" class="sp" transform="translate(200,110) scale(1.1)"/>
+      <use href="#spark" class="sp" transform="translate(580,90)  scale(0.85)"/>
+      <use href="#spark" class="sp" transform="translate(100,330) scale(0.9)"/>
+      <use href="#spark" class="sp" transform="translate(750,390) scale(0.75)"/>
+      <use href="#spark" class="sp" transform="translate(320,480) scale(0.70)"/>
+      <use href="#spark" class="sp" transform="translate(490,300) scale(0.65)"/>
+      <use href="#spark" class="sp" transform="translate(660,600) scale(0.80)"/>
+      <use href="#spark" class="sp" transform="translate(170,620) scale(0.70)"/>
+    </svg>
+    </div><!-- /hero-flowers -->
+  </div><!-- /hero-photo-area -->
+
+  <!-- テキスト -->
+  <div class="hero-content">
+    <div class="hero-content-inner">
+      <span class="hero-event-label">100 DAYS CONSISTENCY EVENT</span>
+      <span class="hero-event-sub gold-text">Adult Pink &amp; Glamour</span>
+      <h1 class="gold-text">100日ありがとうオフ会</h1>
+      <p class="hero-tagline">みんなで楽しむ &nbsp;✦&nbsp; AI &nbsp;✦&nbsp; つながり</p>
+      <div class="hero-divider"><div class="hero-divider-diamond"></div></div>
+      <div class="hero-info">
+        <div class="hero-info-item">2026年7月1日（水）12:00〜14:30</div>
+        <div class="hero-info-item">浅草付近</div>
+        <div class="hero-info-item">3,300円（お昼ごはん付き）</div>
+        <div class="hero-info-item">先着10名さま</div>
+      </div>
+      <a href="https://buy.stripe.com/bJeaEXcUFg6sane9hM1ck0e" class="btn-hero">参加申し込みはこちら</a>
+      <p class="hero-note">受付 11:45〜 &nbsp;／&nbsp; お申し込み後に会場詳細をご案内します</p>
+    </div>
+  </div>
 </div>
 
-<div class="section-divider">🌸 ✦ 🌸 ✦ 🌸</div>
+<div class="sec-rule"></div>
 
-<!-- ===== CONCEPT ===== -->
-<div class="concept-section">
+<!-- 共感 -->
+<div class="kyokan-bg sec">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <span class="sec-en">Voice</span>
+      <h2 class="sec-ja gold-text">こんな気持ち、ありませんか？</h2>
+      <div class="sec-deco"><div class="sec-deco-dot"></div></div>
+    </div>
+    <ul class="check-list">
+      <li>AIを始めたけど、一人だと不安で続くか自信がない</li>
+      <li>画面越しの仲間に、一度リアルで会ってみたい</li>
+      <li>「私なんて」と思ってしまうけど、誰かと喜びを分かち合いたい</li>
+      <li>がんばってきた自分を、ちゃんと認めてあげたい</li>
+      <li>AIって正直、難しそうで怖いと思っている</li>
+    </ul>
+    <div class="kyokan-close" style="background:linear-gradient(135deg,#b88820 0%,#e0c050 40%,#c8a030 70%,#f0d878 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+      そんなあなたのために、<br>
+      この場所をつくりました。
+    </div>
+  </div>
+</div>
+
+<div class="sec-rule"></div>
+
+<!-- コンセプト -->
+<div class="concept-bg">
+  <!-- 花装飾 -->
+  <div class="concept-flowers">
+    <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;position:absolute;inset:0;" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(30,360) rotate(-20)" opacity="0.6">
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.2" cx="0" cy="-24" rx="12" ry="24"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.2" cx="0" cy="-24" rx="12" ry="24" transform="rotate(72)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.2" cx="0" cy="-24" rx="12" ry="24" transform="rotate(144)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.2" cx="0" cy="-24" rx="12" ry="24" transform="rotate(216)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.2" cx="0" cy="-24" rx="12" ry="24" transform="rotate(288)"/>
+        <circle fill="rgba(210,170,50,0.4)" cx="0" cy="0" r="5"/>
+      </g>
+      <g transform="translate(770,50) rotate(15)" opacity="0.6">
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.2" cx="0" cy="-28" rx="14" ry="28"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.2" cx="0" cy="-28" rx="14" ry="28" transform="rotate(72)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.2" cx="0" cy="-28" rx="14" ry="28" transform="rotate(144)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.2" cx="0" cy="-28" rx="14" ry="28" transform="rotate(216)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.2" cx="0" cy="-28" rx="14" ry="28" transform="rotate(288)"/>
+        <circle fill="rgba(210,170,50,0.4)" cx="0" cy="0" r="6"/>
+      </g>
+    </svg>
+  </div>
   <div class="concept-inner">
-    <span class="section-tag">CONCEPT</span>
-    <h2 style="text-align:center;">このオフ会のコンセプト</h2>
+    <span class="sec-en">Concept</span>
+    <div class="concept-rule"></div>
     <p class="concept-text">
-      Harumonyのみんなも<br>
-      来てくれる方も<br>
-      もちろん私も<br><br>
-      <span class="concept-big">みんなで楽しめる時間にしたい🌷</span><br><br>
-      <span class="highlight">「祝うため」じゃなく「楽しむため」に集まる。</span><br><br>
+      Harumonyのみんなも、来てくれる方も、もちろん私も<br>
+      <span class="concept-em gold-text">みんなで楽しめる時間にしたい</span>
+      <span class="concept-accent">「祝うため」じゃなく「楽しむため」に集まる。</span><br><br>
       だから運営も完璧じゃなくていい。<br>
       だから来てくれる人も気を張らなくていい。<br><br>
       ただ一緒に、温かく、笑い合える時間。<br>
-      <strong>それが私たちの100日ありがとうオフ会。</strong>
+      それが私たちの100日ありがとうオフ会。
     </p>
   </div>
 </div>
 
-<div class="section-divider">🌼 ✦ 🌼 ✦ 🌼</div>
+<div class="sec-rule"></div>
 
-<!-- ===== 3つの体験 ===== -->
-<section>
-  <span class="section-tag">EXPERIENCE</span>
-  <h2>当日の3つの体験</h2>
-  <div class="experience-grid">
-    <div class="exp-card">
-      <div class="exp-icon">💎</div>
-      <div class="exp-title">講え合い</div>
-      <div class="exp-desc">ミニムービー・一言シェアで「みんな頑張ったね」を伝え合う</div>
+<!-- Before / After -->
+<div class="ba-bg sec">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <span class="sec-en">Before / After</span>
+      <h2 class="sec-ja gold-text">このオフ会に参加すると</h2>
+      <div class="sec-deco"><div class="sec-deco-dot"></div></div>
     </div>
-    <div class="exp-card">
-      <div class="exp-icon">🤖</div>
-      <div class="exp-title">AI体験</div>
-      <div class="exp-desc">AI画像生成バトルで「あ、こう使うんだ！」を体験する</div>
+    <div class="ba-wrap">
+      <div class="ba-col ba-before">
+        <div class="ba-col-label">Before</div>
+        <div class="ba-item">画面の中だけの繋がり</div>
+        <div class="ba-item">一人でモヤモヤ</div>
+        <div class="ba-item">自分の頑張りに気づけない</div>
+      </div>
+      <div class="ba-arrow-col"><div class="ba-arrow-inner gold-text">→</div></div>
+      <div class="ba-col ba-after">
+        <div class="ba-col-label gold-text">After</div>
+        <div class="ba-item">リアルで笑い合える仲間ができる</div>
+        <div class="ba-item">「私だけじゃなかった」と思える</div>
+        <div class="ba-item">自分の歩みを誇れるようになる</div>
+      </div>
     </div>
-    <div class="exp-card">
-      <div class="exp-icon">🌸</div>
-      <div class="exp-title">新しい出会い</div>
-      <div class="exp-desc">リアルで人・世界に出会うきっかけになる時間</div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider">⭐ ✦ ⭐ ✦ ⭐</div>
-
-<!-- ===== TIMETABLE ===== -->
-<section class="timetable-section">
-  <span class="section-tag">TIMETABLE</span>
-  <h2>当日のタイムテーブル（確定版）</h2>
-  <table class="timetable">
-    <thead>
-      <tr>
-        <th>時間</th>
-        <th>内容</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="time-cell">12:00</td>
-        <td>🎬 オープニングムービー上映・開会</td>
-      </tr>
-      <tr>
-        <td class="time-cell">12:05</td>
-        <td>みはるからのスピーチ・感謝のエール</td>
-      </tr>
-      <tr>
-        <td class="time-cell">12:15</td>
-        <td>参加型「AIに出会って変わったこと」一言シェア</td>
-      </tr>
-      <tr>
-        <td class="time-cell">12:35</td>
-        <td>🎲 AI朝活100日すごろく（チーム対抗・全員でワイワイ）</td>
-      </tr>
-      <tr>
-        <td class="time-cell">13:05</td>
-        <td>⭐ 未来宣言（すごろくゴールで「次の100日、どうなりたい？」をAI画像化→宣言）</td>
-      </tr>
-      <tr>
-        <td class="time-cell">13:20</td>
-        <td>🍕 軽食・歓談・写真撮影</td>
-      </tr>
-      <tr>
-        <td class="time-cell">13:40</td>
-        <td>🎯 インタビューガチャ（ペアでインタビュー → AI魅力カード交換）</td>
-      </tr>
-      <tr>
-        <td class="time-cell">14:10</td>
-        <td>🎁 サプライズタイム（みはるから😊）</td>
-      </tr>
-      <tr>
-        <td class="time-cell">14:20</td>
-        <td>🎬 エンディングムービー上映（みんなのメッセージ）</td>
-      </tr>
-      <tr>
-        <td class="time-cell">14:25</td>
-        <td>📸 集合写真・解散</td>
-      </tr>
-    </tbody>
-  </table>
-  <p style="margin-top:12px; font-size:12px; color:#a07880;">※ 運営メンバーは10:30集合・会場セッティングあり</p>
-</section>
-
-<div class="section-divider">🎲 ✦ 🎲 ✦ 🎲</div>
-
-<!-- ===== GAMES ===== -->
-<div class="games-section">
-  <div class="games-inner">
-    <span class="section-tag">GAMES</span>
-    <h2>当日のお楽しみコンテンツ</h2>
-
-    <div class="game-card">
-      <span class="game-number">ゲーム ①</span>
-      <div class="game-title">🎲 AI朝活100日すごろく（全員一体）</div>
-      <div class="game-lead">みんなの100日のエピソードがマスになった、チーム対抗すごろく！</div>
-      <ul class="game-list">
-        <li>プロジェクターに映して全員で1画面（通信不要・安定）</li>
-        <li>虹色ルーレットで進む・コマ移動アニメつき</li>
-        <li>マスの中身：事前アンケートから「みんなのリアルエピソード」で作成</li>
-        <li>チャレンジマス：「隣のチームに質問！」「全員でガッツポーズ写真！」など</li>
-        <li>ゴール＝「100日達成！次の100日どうなりたい？」→ 未来宣言へ</li>
-      </ul>
-    </div>
-
-    <div class="mirai-box">
-      <div class="mirai-title">⭐ 未来宣言タイム（すごろくゴールに統合）</div>
-      <ul class="mirai-list">
-        <li>「1年後の自分はどこで何してる？」をAI（ChatGPT / Gemini）で画像化</li>
-        <li>スクリーンに映して「私の1年後は〇〇してます！」と宣言</li>
-        <li>みんなで「いいね〜！」「叶うよ〜！」と応援👏</li>
-        <li>AIの力 × 未来を描く継続力 × 互いの応援団</li>
-      </ul>
-    </div>
-
-    <div class="game-card" style="margin-top:24px;">
-      <span class="game-number">ゲーム ②</span>
-      <div class="game-title">🎯 インタビューガチャ（ペアで深く）</div>
-      <div class="game-lead">初対面同士でも一気に仲良くなれる 1対1体験🌷</div>
-      <ul class="game-list">
-        <li>質問ガチャを回しながらお互いにインタビュー（5分 × 2）</li>
-        <li>聞いたことをAIに渡すと、相手の「魅力カード」が完成</li>
-        <li>アプリ上でラッピング → スマホごと手渡しでプレゼント</li>
-        <li>持ち帰り：自分だけの「魅力カード」🎁</li>
-      </ul>
+    <div class="ba-feature">
+      <p class="ba-feat-before">「AIってなんか怖い・難しそう…」</p>
+      <p class="ba-feat-arrow gold-text">✦ ↓ ✦</p>
+      <p class="ba-feat-after gold-text">「AIってなんか面白いかも！」</p>
+      <p class="ba-feat-note">スマホ1台で、その場で一緒に体験するから<br>自然と「できる！」に変わります</p>
     </div>
   </div>
 </div>
 
-<div class="section-divider">💌 ✦ 💌 ✦ 💌</div>
+<div class="sec-rule"></div>
 
-<!-- ===== CTA BOTTOM ===== -->
-<div class="cta-section">
-  <span class="section-tag">JOIN US</span>
-  <h2>一緒にありがとうを伝え合いましょう🌸</h2>
-  <p>「祝うため」じゃなく「楽しむため」に集まる場所。<br>気を張らなくていい。ただ一緒に笑いましょう。</p>
-  <a href="https://www.reservestock.jp/events/1149565" class="cta-btn">✨ 参加申し込みはこちら</a>
-  <p class="hero-note" style="margin-top:12px;">📅 2026年7月1日（火）12:00〜14:30</p>
+<!-- 3つの体験 -->
+<div class="exp-bg sec">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <span class="sec-en">Experience</span>
+      <h2 class="sec-ja gold-text">当日の3つの体験</h2>
+      <div class="sec-deco"><div class="sec-deco-dot"></div></div>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-num gold-text">01</div>
+        <div class="exp-title gold-text">讃え合い</div>
+        <div class="exp-desc">ミニムービー・一言シェアで「みんな頑張ったね」を伝え合う</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-num gold-text">02</div>
+        <div class="exp-title gold-text">AI体験</div>
+        <div class="exp-desc">AIゲームで「あ、こう使うんだ！」を体験する</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-num gold-text">03</div>
+        <div class="exp-title gold-text">新しい出会い</div>
+        <div class="exp-desc">リアルで人・世界に出会うきっかけになる時間</div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- ===== FOOTER ===== -->
+<div class="sec-rule"></div>
+
+<!-- こんな方に -->
+<div class="target-bg">
+  <div class="target-flowers">
+    <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;position:absolute;inset:0;" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(750,460) rotate(10)" opacity="0.55">
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.2" cx="0" cy="-26" rx="13" ry="26"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.2" cx="0" cy="-26" rx="13" ry="26" transform="rotate(72)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.2" cx="0" cy="-26" rx="13" ry="26" transform="rotate(144)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.2" cx="0" cy="-26" rx="13" ry="26" transform="rotate(216)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.2" cx="0" cy="-26" rx="13" ry="26" transform="rotate(288)"/>
+        <circle fill="rgba(210,170,50,0.45)" cx="0" cy="0" r="5.5"/>
+      </g>
+      <g transform="translate(50,60) rotate(-10)" opacity="0.5">
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.0" cx="0" cy="-18" rx="9" ry="18"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.0" cx="0" cy="-18" rx="9" ry="18" transform="rotate(72)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.0" cx="0" cy="-18" rx="9" ry="18" transform="rotate(144)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.0" cx="0" cy="-18" rx="9" ry="18" transform="rotate(216)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.45)" stroke-width="1.0" cx="0" cy="-18" rx="9" ry="18" transform="rotate(288)"/>
+        <circle fill="rgba(210,170,50,0.38)" cx="0" cy="0" r="4"/>
+      </g>
+    </svg>
+  </div>
+  <div class="target-inner">
+    <div class="sec-head">
+      <span class="sec-en">For You</span>
+      <h2 class="sec-ja gold-text">こんな方に来てほしい</h2>
+      <div class="sec-deco"><div class="sec-deco-dot"></div></div>
+    </div>
+    <ul class="target-list">
+      <li>朝活やAIを、ゆるくでも続けてきた人</li>
+      <li>オンラインで繋がった仲間とリアルで会ってみたい人</li>
+      <li>完璧じゃなくていい、まず楽しみたい人</li>
+      <li>AIはこれからだけど、雰囲気が気になる人</li>
+      <li>「頑張ってきた美春に会ってみたい」と思ってくれる人</li>
+      <li>特別なことはしてないけど、毎日を頑張っている人</li>
+    </ul>
+    <div class="target-close">
+      朝活AIはもちろん、いつもの毎日を少しでも頑張っているあなたが、この会の主役です🌸
+    </div>
+  </div>
+</div>
+
+<div class="sec-rule"></div>
+
+<!-- タイムテーブル -->
+<div class="flow-bg sec">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <span class="sec-en">Timetable</span>
+      <h2 class="sec-ja gold-text">当日のながれ</h2>
+      <div class="sec-deco"><div class="sec-deco-dot"></div></div>
+    </div>
+    <ul class="flow-list">
+      <li class="flow-item">
+        <div class="flow-num gold-text">01</div>
+        <div><div class="flow-title">オープニング・開会</div><div class="flow-desc">みはるのスピーチと感謝のエール。「AIに出会って変わったこと」みんなで一言シェア</div></div>
+      </li>
+      <li class="flow-item">
+        <div class="flow-num gold-text">02</div>
+        <div><div class="flow-title">お昼ごはん</div><div class="flow-desc">軽食をご用意しています。おしゃべりしながらゆっくりどうぞ（参加費込み）</div></div>
+      </li>
+      <li class="flow-item">
+        <div class="flow-num gold-text">03</div>
+        <div><div class="flow-title">AIゲームでわいわい交流</div><div class="flow-desc">みんなでAIを使ったゲームを楽しみます。詳細は当日のお楽しみ</div></div>
+      </li>
+      <li class="flow-item">
+        <div class="flow-num gold-text">04</div>
+        <div><div class="flow-title">みはるのお話 ＆ サプライズ</div><div class="flow-desc">みはるからサプライズがあります</div></div>
+      </li>
+      <li class="flow-item">
+        <div class="flow-num gold-text">05</div>
+        <div><div class="flow-title">エンドロール ＆ 集合写真</div><div class="flow-desc">みんなのメッセージムービーを一緒に見て、最後は集合写真</div></div>
+      </li>
+    </ul>
+    <p style="margin-top:20px; font-size:12px; color:var(--text-soft); letter-spacing:0.07em;">2026年7月1日（水）12:00〜14:30（受付 11:45〜）／浅草付近</p>
+  </div>
+</div>
+
+<div class="sec-rule"></div>
+
+<!-- Q&A -->
+<div class="qa-bg sec">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <span class="sec-en">Q &amp; A</span>
+      <h2 class="sec-ja gold-text">よくある質問</h2>
+      <div class="sec-deco"><div class="sec-deco-dot"></div></div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qa-q-mark gold-text">Q</span>AIが全然わからなくても参加できますか？</div>
+      <div class="qa-a"><span class="qa-a-mark gold-text">A</span>大丈夫！スマホがあればその場で一緒にできる内容です🌸</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qa-q-mark gold-text">Q</span>一人での参加でも浮きませんか？</div>
+      <div class="qa-a"><span class="qa-a-mark gold-text">A</span>ほとんどの方が一人参加。AIゲームで自然と打ち解けられます💕</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qa-q-mark gold-text">Q</span>100日チャレンジをやっていないけど参加していい？</div>
+      <div class="qa-a"><span class="qa-a-mark gold-text">A</span>もちろん！AIや朝活はもちろん、人生においてみんな何かしら頑張っています。少しでも頑張った人みんなが主役です🌷</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qa-q-mark gold-text">Q</span>パソコンは必要ですか？</div>
+      <div class="qa-a"><span class="qa-a-mark gold-text">A</span>スマホだけでOKです📱</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q"><span class="qa-q-mark gold-text">Q</span>お昼ごはんは出ますか？</div>
+      <div class="qa-a"><span class="qa-a-mark gold-text">A</span>軽食をご用意しています🍽（参加費に込み）</div>
+    </div>
+  </div>
+</div>
+
+<!-- 締め -->
+<div class="shime-bg">
+  <div class="shime-flowers">
+    <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;position:absolute;inset:0;" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(60,440) rotate(-15)" opacity="0.5">
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.3" cx="0" cy="-30" rx="15" ry="30"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.3" cx="0" cy="-30" rx="15" ry="30" transform="rotate(72)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.3" cx="0" cy="-30" rx="15" ry="30" transform="rotate(144)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.3" cx="0" cy="-30" rx="15" ry="30" transform="rotate(216)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.3" cx="0" cy="-30" rx="15" ry="30" transform="rotate(288)"/>
+        <circle fill="rgba(210,170,50,0.45)" cx="0" cy="0" r="6"/>
+      </g>
+      <g transform="translate(740,80) rotate(20)" opacity="0.5">
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.3" cx="0" cy="-26" rx="13" ry="26"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.3" cx="0" cy="-26" rx="13" ry="26" transform="rotate(72)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.3" cx="0" cy="-26" rx="13" ry="26" transform="rotate(144)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.3" cx="0" cy="-26" rx="13" ry="26" transform="rotate(216)"/>
+        <ellipse fill="none" stroke="rgba(200,160,48,0.5)" stroke-width="1.3" cx="0" cy="-26" rx="13" ry="26" transform="rotate(288)"/>
+        <circle fill="rgba(210,170,50,0.4)" cx="0" cy="0" r="5.5"/>
+      </g>
+      <path fill="none" stroke="rgba(180,140,40,0.35)" stroke-width="1" d="M 0 500 Q 100 380 140 280 Q 170 200 180 100"/>
+      <ellipse fill="none" stroke="rgba(180,140,40,0.3)" stroke-width="1" cx="110" cy="370" rx="20" ry="10" transform="rotate(-30,110,370)"/>
+      <ellipse fill="none" stroke="rgba(180,140,40,0.3)" stroke-width="1" cx="160" cy="200" rx="18" ry="9" transform="rotate(15,160,200)"/>
+    </svg>
+  </div>
+  <div class="shime-inner">
+    <span class="shime-en">With Love from Miharu</span>
+    <div class="shime-rule"></div>
+    <p class="shime-text">
+      完璧じゃなくていい。<br>
+      すごい実績がなくてもいい。<br><br>
+      <span class="shime-em gold-text">「会ってみたい」<br>その気持ちだけで十分です。</span><br><br>
+      あなたが来てくれることが、<br>
+      誰かの「来てよかった」になります。
+    </p>
+    <a href="https://buy.stripe.com/bJeaEXcUFg6sane9hM1ck0e" class="btn-hero">参加申し込みはこちら</a>
+    <p style="margin-top:16px; font-size:12px; color:var(--text-mid); letter-spacing:0.1em;">先着10名さま &nbsp;✦&nbsp; 3,300円（お昼ごはん付き）</p>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-sec">
+  <div class="cta-inner">
+    <span class="sec-en" style="text-align:center; display:block; margin-bottom:10px;">Join Us</span>
+    <h2 class="cta-title gold-text">一緒にありがとうを伝え合いましょう</h2>
+    <div class="sec-deco" style="margin-bottom:0;"><div class="sec-deco-dot"></div></div>
+    <p class="cta-info">
+      <strong>2026年7月1日（水）</strong> 12:00〜14:30（受付 11:45〜）<br>
+      浅草付近（お申し込み後に詳細をご案内）<br>
+      参加費 <strong>3,300円</strong>（お昼ごはん付き）&nbsp;✦&nbsp;先着 <strong>10名さま</strong>
+    </p>
+    <a href="https://buy.stripe.com/bJeaEXcUFg6sane9hM1ck0e" class="btn-cta">参加申し込みはこちら</a>
+    <p class="cta-note">Stripe決済ページに移動します</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
+  <div class="footer-deco">✦ ✦ ✦</div>
   <p>主催：みはる（長岡美春）</p>
-  <p style="margin-top:6px;">LINE / Instagram：<a href="#">@miharu_kosodatelife</a></p>
-  <p style="margin-top:12px; font-size:11px; color:#8a6860;">© 2026 Harumony AI朝活道場</p>
+  <p style="margin-top:7px;">Instagram &nbsp;<a href="https://www.instagram.com/miharu_kosodatelife" target="_blank">@miharu_kosodatelife</a></p>
+  <p style="margin-top:16px; font-size:10px; opacity:0.6;">© 2026 Harumony AI朝活道場</p>
 </footer>
 
 </body>

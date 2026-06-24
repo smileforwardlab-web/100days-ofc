@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>100日ありがとうオフ会 ～みんなで楽しむ × AI × つながり～</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Yomogi&family=Zen+Kurenaido&family=Klee+One:wght@400;600&family=Stick&family=Yuji+Mai&family=Yuji+Syuku&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -31,6 +31,9 @@ body {
   font-weight: 300;
   font-size: 18px;
   overflow-x: hidden;
+  line-break: strict;
+  overflow-wrap: break-word;
+  word-break: auto-phrase;
 }
 
 /* ===== GOLD TEXT GRADIENT ===== */
@@ -92,6 +95,60 @@ body {
   object-fit: cover;
   object-position: 50% 35%;
   display: block;
+}
+
+/* 手書き吹き出し風テキスト */
+.hero-handwrite {
+  position: absolute;
+  top: 22%;
+  right: 10%;
+  z-index: 3;
+  transform: rotate(6deg);
+  text-align: center;
+  pointer-events: none;
+}
+.hero-handwrite-text {
+  display: inline-block;
+  font-family: 'Klee One', 'Hiragino Maru Gothic Pro', 'Yu Gothic', sans-serif;
+  font-size: clamp(12px, 2.8vw, 20px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  color: #8B6800;
+  text-shadow:
+    0 0 12px rgba(255,255,255,1),
+    0 0 20px rgba(255,255,255,0.9),
+    1px 1px 0 rgba(255,255,255,0.8),
+    -1px -1px 0 rgba(255,255,255,0.8);
+  padding: 0;
+}
+.hero-handwrite-text .hw-slash {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2em;
+  font-style: italic;
+  line-height: 1;
+  vertical-align: middle;
+  font-weight: 300;
+  color: #C09820;
+}
+
+/* 手書きスタンプ */
+.hero-stamp {
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  z-index: 10;
+  text-align: center;
+  font-family: 'Yomogi', cursive;
+  font-size: clamp(15px, 3.8vw, 26px);
+  line-height: 1.65;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #7A5A00 0%, #C09010 45%, #9A7800 75%, #D4A820 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 1px 4px rgba(100,70,0,0.28));
+  padding: 10px 14px;
 }
 
 /* SVG 花装飾（写真エリア上） */
@@ -747,6 +804,9 @@ footer a { color: var(--text-dark); text-decoration: none; }
   <!-- 写真エリア（上部） -->
   <div class="hero-photo-area">
     <img src="miharu.jpg" alt="みはる（長岡美春）" class="hero-img">
+    <div class="hero-handwrite">
+      <span class="hero-handwrite-text">「できない」「無理」を卒業！！<br><span class="hw-slash">＼</span>朝活AI 100日達成！！<span class="hw-slash">／</span></span>
+    </div>
     <!-- 金の花SVG装飾 -->
     <div class="hero-flowers">
     <svg viewBox="0 0 800 700" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;position:absolute;inset:0;" xmlns="http://www.w3.org/2000/svg">
@@ -1024,17 +1084,17 @@ footer a { color: var(--text-dark); text-decoration: none; }
       <div class="exp-card fade-up delay-1">
         <div class="exp-num gold-text">01</div>
         <div class="exp-title gold-text">讃え合い</div>
-        <div class="exp-desc">ミニムービー・一言シェアで「みんな頑張ったね」を伝え合う</div>
+        <div class="exp-desc">ミニムービー・一言シェアで<br>「みんな頑張ったね」を伝え合う</div>
       </div>
       <div class="exp-card fade-up delay-2">
         <div class="exp-num gold-text">02</div>
         <div class="exp-title gold-text">AI体験</div>
-        <div class="exp-desc">AIゲームで「あ、こう使うんだ！」を体験する</div>
+        <div class="exp-desc">AIゲームで<br>「あ、こう使うんだ！」を体験する</div>
       </div>
       <div class="exp-card fade-up delay-3">
         <div class="exp-num gold-text">03</div>
         <div class="exp-title gold-text">新しい出会い</div>
-        <div class="exp-desc">リアルで人・世界に出会うきっかけになる時間</div>
+        <div class="exp-desc">リアルで人・世界に出会う<br>きっかけになる時間</div>
       </div>
     </div>
   </div>
